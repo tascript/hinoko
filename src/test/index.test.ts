@@ -31,7 +31,7 @@ describe('Test API', () => {
         body
       })
       expect(res.status).toBe(201)
-      expect(JSON.parse(await res.text())).toEqual({
+      expect(await res.json()).toEqual({
         message: "tascript turned 34!"
       })
     })
