@@ -4,12 +4,14 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.8",
+    "drizzle-orm": "^0.28.6",
     "hono": "^3.6.0",
     "zod": "^3.22.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "bun-types": "^0.6.2",
+    "drizzle-kit": "^0.19.13",
     "jest": "^29.7.0"
   }
 }
