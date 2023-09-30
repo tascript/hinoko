@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "bun run --hot src/index.tsx"
+    "dev:b": "bun run --hot src/index.tsx",
+    "dev:w": "wrangler dev src/index.tsx"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.9",
