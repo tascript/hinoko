@@ -1,4 +1,5 @@
 import app from '../index'
+import { expect, test, describe } from "bun:test"
 
 describe('Test API', () => {
   test('GET /', async () => {
