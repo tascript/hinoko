@@ -6,25 +6,31 @@ hinoko is application template for cloudflare workers app with Hono and Bun.
 
 ### package install
 
-```
+```shell
 $ bun install
 ```
 
 ### development
 
-```
-$ bun run dev
+```shell
+$ bun dev
 $ open http://localhost:3000
 ```
 
 ### emulator for workers
 
+```shell
+$ bun emulator
 ```
-$ bun run emulate
+
+### deploy
+
+```shell
+$ bun deploy
 ```
 
 ### test
 
-```
-$ bun run test
+```shell
+$ bun test
 ```
