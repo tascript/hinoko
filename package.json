@@ -3,7 +3,8 @@
     "dev": "bun run --hot src/index.tsx",
     "emulator": "wrangler dev src/index.tsx",
     "deploy": "wrangler deploy --minify src/index.tsx",
-    "test": "bun run test"
+    "test": "bun run test",
+    "migrate:gen": "drizzle-kit generate:sqlite --out migrations --schema src/db/schema.ts"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.9",
@@ -12,7 +13,9 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.5",
     "@types/jest": "^29.5.5",
+    "better-sqlite3": "^8.7.0",
     "bun-types": "^1.0.3",
     "drizzle-kit": "^0.19.13",
     "wrangler": "^3.10.1"
