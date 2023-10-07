@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { Greet } from './components/Greet'
 import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
+import { selectAll } from './db/repo/users'
 
 const app = new Hono()
 
@@ -26,6 +27,11 @@ app.post('/profile', zValidator('json', schema, (result, c) => {
   return c.json({
     message: `${payload.name} turned ${payload.age}!`
   }, 201)
+})
+
+app.get('/users', async (c) => {
+  const res = await selectAll()
+  return c.json(res)
 })
 
 export default app
