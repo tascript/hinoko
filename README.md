@@ -20,17 +20,23 @@ $ open http://localhost:3000
 ### emulator for workers
 
 ```shell
-$ bun emulator
+$ bun run emulator
 ```
 
 ### deploy
 
 ```shell
-$ bun deploy
+$ bun run deploy
 ```
 
 ### test
 
 ```shell
-$ bun test
+$ bun run test
+```
+
+### migration
+
+```shell
+$ bun run migrate:gen
 ```

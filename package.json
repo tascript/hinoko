@@ -3,7 +3,7 @@
     "dev": "bun run --hot src/index.tsx",
     "emulator": "wrangler dev src/index.tsx",
     "deploy": "wrangler deploy --minify src/index.tsx",
-    "test": "bun run test",
+    "test": "bun test",
     "migrate:gen": "drizzle-kit generate:sqlite --out migrations --schema src/db/schema.ts"
   },
   "dependencies": {
