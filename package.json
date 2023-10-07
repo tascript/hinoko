@@ -13,6 +13,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231002.0",
     "@types/better-sqlite3": "^7.6.5",
     "@types/jest": "^29.5.5",
     "better-sqlite3": "^8.7.0",
