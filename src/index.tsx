@@ -2,8 +2,7 @@ import { Hono } from 'hono'
 import { Greet } from './components/Greet'
 import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
-import { drizzle } from 'drizzle-orm/d1'
-import { users } from './db/schema'
+import { selectAll } from './db/repo/user'
 
 type Bindings = {
   DB: D1Database
@@ -35,8 +34,7 @@ app.post('/profile', zValidator('json', schema, (result, c) => {
 })
 
 app.get('/users', async (c) => {
-  const db = drizzle(c.env.DB)
-  const res = await db.select().from(users).all()
+  const res = await selectAll(c.env.DB)
   return c.json(res)
 })
 
