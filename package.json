@@ -9,16 +9,16 @@
   "dependencies": {
     "@hono/zod-validator": "^0.1.9",
     "drizzle-orm": "^0.28.6",
-    "hono": "^3.7.3",
-    "zod": "^3.22.2"
+    "hono": "^3.7.5",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231002.0",
     "@types/better-sqlite3": "^7.6.5",
     "@types/jest": "^29.5.5",
     "better-sqlite3": "^8.7.0",
-    "bun-types": "^1.0.3",
+    "bun-types": "^1.0.4",
     "drizzle-kit": "^0.19.13",
-    "wrangler": "^3.10.1"
+    "wrangler": "^3.11.0"
   }
 }
