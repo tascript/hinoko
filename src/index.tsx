@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { Greet } from './components/Greet'
 import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
-import { selectAll } from './db/repo/user'
+import { selectAll } from './db/repo/account'
 
 type Bindings = {
   DB: D1Database
@@ -33,7 +33,7 @@ app.post('/profile', zValidator('json', schema, (result, c) => {
   }, 201)
 })
 
-app.get('/users', async (c) => {
+app.get('/accounts', async (c) => {
   const res = await selectAll(c.env.DB)
   return c.json(res)
 })

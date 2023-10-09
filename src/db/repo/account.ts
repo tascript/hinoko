@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/d1'
-import { users } from '../schema'
+import { accounts } from '../schema'
 
 export const selectAll = async(database: D1Database) => {
     const d = drizzle(database)
-  return d.select().from(users).all()
+  return d.select().from(accounts).all()
 }
