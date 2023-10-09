@@ -4,7 +4,9 @@
     "emulator": "wrangler dev src/index.tsx",
     "deploy": "wrangler deploy --minify src/index.tsx",
     "test": "bun test",
-    "migrate:gen": "drizzle-kit generate:sqlite --out migrations --schema src/db/schema.ts"
+    "migrate:gen": "drizzle-kit generate:sqlite --out migrations --schema src/db/schema.ts",
+    "migrate:local": "bun wrangler d1 migrations apply kamado --local",
+    "migrate:production": "bun wrangler d1 migrations apply kamado"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.9",

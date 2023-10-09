@@ -37,6 +37,20 @@ $ bun run test
 
 ### migration
 
+generate migration file
+
 ```shell
 $ bun run migrate:gen
+```
+
+execute migration for local
+
+```shell
+$ bun run migration:local
+```
+
+execute migration for production
+
+```shell
+$ bun run migration:production
 ```
