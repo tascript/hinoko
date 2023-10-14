@@ -1,4 +1,4 @@
-import { selectAll, save } from '../repo/account'
+import { selectAll, save, bulkDelete } from '../repo/account'
 
 export const getAllAccounts = (database: D1Database) => {
   return selectAll(database)
@@ -6,4 +6,8 @@ export const getAllAccounts = (database: D1Database) => {
 
 export const saveAccount = (database: D1Database, name: string, age: number) => {
   return save(database, name, age)
+}
+
+export const bulkDeleteAccounts = (database: D1Database,) => {
+  return bulkDelete(database)
 }

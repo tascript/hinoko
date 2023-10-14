@@ -15,3 +15,8 @@ export const save = async(database: D1Database, name: string, age: number) => {
     age
   })
 }
+
+export const bulkDelete = async (database: D1Database) => {
+  const d = drizzle(database)
+  await d.delete(accounts)
+}
