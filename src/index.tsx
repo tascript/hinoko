@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { Greet } from './components/Greet'
 import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
-import { getAllAccounts } from './usecase/account'
+import { saveAccount, getAllAccounts } from './usecase/account'
 
 type Bindings = {
   DB: D1Database
@@ -20,17 +20,16 @@ const schema =  z.object({
   age: z.number()
 })
 
-app.post('/profile', zValidator('json', schema, (result, c) => {
+app.post('/accounts', zValidator('json', schema, (result, c) => {
   if (!result.success) {
     return c.json({
       message: `payload is invavlid: ${JSON.parse(result.error.message)[0].message}`
     }, 400)
   }
-}), (c) => {
+}), async (c) => {
   const payload = c.req.valid('json')
-  return c.json({
-    message: `${payload.name} turned ${payload.age}!`
-  }, 201)
+  await saveAccount(c.env.DB, payload.name, payload.age)
+  return c.text('Created', 201)
 })
 
 app.get('/accounts', async (c) => {
