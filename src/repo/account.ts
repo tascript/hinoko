@@ -9,7 +9,7 @@ export const selectAll = async(database: D1Database) => {
 
 export const save = async(database: D1Database, name: string, age: number) => {
   const d = drizzle(database)
-  d.insert(accounts).values({
+  await d.insert(accounts).values({
     id: uuid(),
     name,
     age
