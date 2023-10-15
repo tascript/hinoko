@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import { Greet } from './components/Greet'
 import { zValidator } from '@hono/zod-validator'
 import { z } from 'zod'
-import { saveAccount, getAllAccounts, bulkDeleteAccounts } from './usecase/account'
+import { saveAccount, deleteAccount, getAllAccounts, bulkDeleteAccounts } from './usecase/account'
 
 type Bindings = {
   DB: D1Database
@@ -40,6 +40,12 @@ app.post('/accounts', zValidator('json', schema, (result, c) => {
 app.delete('/accounts', async (c) => {
   await bulkDeleteAccounts(c.env.DB)
   return c.text('Deleted All of Accouts Table', 200)
+})
+
+app.delete('/accounts/:id', async (c) => {
+  const { id } = c.req.param()
+  const res = await deleteAccount(c.env.DB, id)
+  return c.text(`Deleted Account: ${res.id}`, 200)
 })
 
 export default app
