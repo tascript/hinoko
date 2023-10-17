@@ -11,12 +11,12 @@
   "dependencies": {
     "@hono/zod-validator": "^0.1.9",
     "drizzle-orm": "^0.28.6",
-    "hono": "^3.7.6",
+    "hono": "^3.8.0",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231010.0",
+    "@cloudflare/workers-types": "^4.20231016.0",
     "@types/better-sqlite3": "^7.6.5",
     "@types/jest": "^29.5.5",
     "@types/uuid": "^9.0.5",
