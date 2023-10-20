@@ -1,5 +1,6 @@
 import app from '../index'
-import { expect, test, describe } from "bun:test"
+import { expect, test, describe, spyOn, jest } from "bun:test"
+import * as Account  from '../usecase/account'
 
 describe('Test API', () => {
   test('GET /', async () => {
@@ -7,14 +8,14 @@ describe('Test API', () => {
     expect(res.status).toBe(200)
   })
 
-  describe('POST /profile' , () => {
+  describe('POST /accounts' , () => {
     test('return 400 when payload is invalid', async () => {
       const method = 'POST'
       const body = JSON.stringify({
         name: 'tascript',
         age: undefined
       })
-      const res = await app.request('/profile', {
+      const res = await app.request('/accounts', {
         method,
         body
       })
@@ -27,13 +28,17 @@ describe('Test API', () => {
         name: 'tascript',
         age: 34
       })
-      const res = await app.request('/profile', {
+      const mockSaveAccount = spyOn(Account, 'saveAccount').mockImplementation(() => new Promise ((res) => res(undefined)))
+      const res = await app.request('/accounts', {
         method,
         body
+      }, {
+        DB: 'test'
       })
+      expect(mockSaveAccount).toHaveBeenCalled()
       expect(res.status).toBe(201)
       expect(await res.json()).toEqual({
-        message: "tascript turned 34!"
+        message: "Created"
       })
     })
   })
