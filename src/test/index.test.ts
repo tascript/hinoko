@@ -1,5 +1,5 @@
 import app from '../index'
-import { expect, test, describe, spyOn, jest } from "bun:test"
+import { expect, test, describe, spyOn, jest, mock } from "bun:test"
 import * as Account  from '../usecase/account'
 
 describe('Test API', () => {
@@ -28,6 +28,7 @@ describe('Test API', () => {
         name: 'tascript',
         age: 34
       })
+      // FIXME: Not working for ESM spyOn
       const mockSaveAccount = spyOn(Account, 'saveAccount').mockImplementation(() => new Promise ((res) => res(undefined)))
       const res = await app.request('/accounts', {
         method,
