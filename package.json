@@ -9,20 +9,20 @@
     "migrate:production": "bun wrangler d1 migrations apply kamado"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.1.9",
-    "drizzle-orm": "^0.28.6",
-    "hono": "^3.8.0",
+    "@hono/zod-validator": "^0.1.11",
+    "drizzle-orm": "^0.29.0",
+    "hono": "^3.10.1",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231016.0",
-    "@types/better-sqlite3": "^7.6.5",
-    "@types/jest": "^29.5.5",
-    "@types/uuid": "^9.0.5",
-    "better-sqlite3": "^9.0.0",
-    "bun-types": "^1.0.6",
-    "drizzle-kit": "^0.19.13",
-    "wrangler": "^3.13.1"
+    "@cloudflare/workers-types": "^4.20231025.0",
+    "@types/better-sqlite3": "^7.6.7",
+    "@types/jest": "^29.5.8",
+    "@types/uuid": "^9.0.7",
+    "better-sqlite3": "^9.1.1",
+    "bun-types": "^1.0.13",
+    "drizzle-kit": "^0.20.4",
+    "wrangler": "^3.16.0"
   }
 }
