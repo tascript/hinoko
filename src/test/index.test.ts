@@ -45,7 +45,7 @@ describe('Test API', () => {
     test('return 200', async () => {
       const mockBulkDeleteAccounts = spyOn(Account, 'bulkDeleteAccounts').mockImplementation(() => new Promise ((res) => res(undefined)))
       const res = await app.fetch(genRequest({
-        path: `/accounts`,
+        path: '/accounts',
         method: 'DELETE',
       }), {
         DB: 'test'
