@@ -36,6 +36,41 @@ describe('Test API', () => {
       })
       expect(mockSaveAccount).toHaveBeenCalled()
       expect(res.status).toBe(201)
+      const blob = await res.blob()
+      expect(await blob.text()).toBe('Created')
+    })
+  })
+
+  describe('DELETE /accounts', () => {
+    test('return 200', async () => {
+      const mockBulkDeleteAccounts = spyOn(Account, 'bulkDeleteAccounts').mockImplementation(() => new Promise ((res) => res(undefined)))
+      const res = await app.fetch(genRequest({
+        path: `/accounts`,
+        method: 'DELETE',
+      }), {
+        DB: 'test'
+      })
+      expect(mockBulkDeleteAccounts).toHaveBeenCalled()
+      expect(res.status).toBe(200)
+      const blob = await res.blob()
+      expect(await blob.text()).toBe('Deleted All of Accouts Table')
+    })
+  })
+
+  describe('DELETE /accounts/:id' , () => {
+    test('reutrn 200', async () => {
+      const id = 'dummy-id'
+      const mockDeleteAccount = spyOn(Account, 'deleteAccount').mockImplementation(() => new Promise ((res) => res({id})))
+      const res = await app.fetch(genRequest({
+        path: `/accounts/${id}`,
+        method: 'DELETE',
+      }), {
+        DB: 'test'
+      })
+      expect(mockDeleteAccount).toHaveBeenCalled()
+      expect(res.status).toBe(200)
+      const blob = await res.blob()
+      expect(await blob.text()).toBe(`Deleted Account: ${id}`)
     })
   })
 })

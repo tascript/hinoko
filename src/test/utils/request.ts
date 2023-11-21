@@ -1,7 +1,7 @@
 interface GenRequest {
   path: string
   method: 'GET' | 'POST' | 'PUT' | 'DELETE',
-  body: string
+  body?: string
 }
 
 export const genRequest = (arg: GenRequest) => {
