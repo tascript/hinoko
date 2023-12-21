@@ -11,18 +11,18 @@
   "dependencies": {
     "@hono/zod-validator": "^0.1.11",
     "drizzle-orm": "^0.29.1",
-    "hono": "^3.11.7",
+    "hono": "^3.11.9",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231121.0",
+    "@cloudflare/workers-types": "^4.20231218.0",
     "@types/better-sqlite3": "^7.6.8",
     "@types/jest": "^29.5.11",
     "@types/uuid": "^9.0.7",
     "better-sqlite3": "^9.2.2",
     "bun-types": "^1.0.18",
-    "drizzle-kit": "^0.20.6",
-    "wrangler": "^3.21.0"
+    "drizzle-kit": "^0.20.7",
+    "wrangler": "^3.22.1"
   }
 }
