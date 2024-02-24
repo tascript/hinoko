@@ -10,19 +10,19 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.1.11",
-    "drizzle-orm": "^0.29.3",
-    "hono": "^4.0.4",
+    "drizzle-orm": "^0.29.4",
+    "hono": "^4.0.5",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240208.0",
+    "@cloudflare/workers-types": "^4.20240222.0",
     "@types/better-sqlite3": "^7.6.9",
     "@types/jest": "^29.5.12",
     "@types/uuid": "^9.0.8",
-    "better-sqlite3": "^9.4.1",
-    "bun-types": "^1.0.27",
+    "better-sqlite3": "^9.4.3",
+    "bun-types": "^1.0.29",
     "drizzle-kit": "^0.20.14",
-    "wrangler": "^3.28.3"
+    "wrangler": "^3.29.0"
   }
 }
